@@ -12,7 +12,8 @@
 	<artifactId>inventario-pro</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>inventario</name>
-	<description>Project for Spring Boot</description>
+    <packaging>war</packaging>
+    <description>Project for Spring Boot</description>
 	<url/>
 	<licenses>
 		<license/>
