@@ -36,7 +36,7 @@ public class Utils {
 
         for (Map.Entry<String, String> entry : campos.entrySet()) {
             String valor = entry.getValue();
-            if (valor == null || valor.isEmpty()) {
+            if (valor == null || valor.isBlank()) {
                 faltantes.add(entry.getKey());
             }
         }
@@ -129,7 +129,7 @@ public class Utils {
                 .path("cardTabItemInstance")
                 .path("value").asText(null);
 
-        return (codigo == null || codigo.isEmpty())
+        return (codigo == null || codigo.isBlank())
                 ? item.path("value").asText("")
                 : codigo;
     }

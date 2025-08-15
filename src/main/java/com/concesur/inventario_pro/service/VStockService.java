@@ -1,6 +1,5 @@
 package com.concesur.inventario_pro.service;
 
-
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
