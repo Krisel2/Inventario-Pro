@@ -1,0 +1,23 @@
+<configuration>
+    <!-- Define la ruta del directorio de logs -->
+    <!--<property name="LOG_PATH" value="/opt/tomcat/logs"/>-->
+    <property name="LOG_PATH" value="/usr/libexec/tomcat10/logs"/>
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/pluginsGoInventario.log</file>
+        <!--<file>logs/pluginsInventarioPro.log</file>-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Usa la propiedad LOG_PATH para la política de rotación-->
+            <fileNamePattern>${LOG_PATH}/pluginsGoInventario-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!--<fileNamePattern>logs/pluginsInventarioPro-%d{yyyy-MM-dd}.log</fileNamePattern>-->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>

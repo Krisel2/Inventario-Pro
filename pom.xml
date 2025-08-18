@@ -8,13 +8,13 @@
 		<version>3.4.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.concesur</groupId>
-	<artifactId>inventario-pro</artifactId>
+	<groupId>com.inventario</groupId>
+	<artifactId>inventario</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>inventario</name>
     <packaging>war</packaging>
-    <description>Project for Spring Boot</description>
-	<url/>
+    <description>Proyecto para inventario.pro</description>
+    <url/>
 	<licenses>
 		<license/>
 	</licenses>
@@ -35,7 +35,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
