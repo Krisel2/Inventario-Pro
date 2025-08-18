@@ -15,51 +15,51 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import lombok.Getter;
 
-@Configuration
-@PropertySource("classpath:inventario.properties")
-@Getter
-public class AppConfig {
-
-    @Bean
-    @Primary
-    RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
-// RestTemplate sin redirecciones
-    @Bean
-    @Qualifier("restTemplateSinRedirect")
-    RestTemplate restTemplateSinRedirect() {
-        CloseableHttpClient httpClient = HttpClients.custom()
-                .disableRedirectHandling()
-                .build();
-
-        HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory(httpClient);
-        return new RestTemplate(factory);
-    }
-
-    @Bean
-    WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**")
-                        .allowedOrigins("*")
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                        .allowedHeaders("*");
-            }
-        };
-    }
-
-    @Value("${app.go.publicadoInv.tab}")
-    private String publicadoInvTab;
-    @Value("${app.go.obtenerVehicleStockId.tab}")
-    private String obtenerVehicleIdTab;
-    @Value("${app.g.obtenerResponsableReserva.tab}")
-    private String obtenerResponsableReservaTab;
-    @Value("${app.go.user}")
-    private String user;
-    @Value("${app.go.password}")
-    private String password;
-    @Value("${app.url.token}")
-    private String urlToken;
-}
+//@Configuration
+//@PropertySource("classpath:inventario.properties")
+//@Getter
+//public class AppConfig {
+//
+//    @Bean
+//    @Primary
+//    RestTemplate restTemplate() {
+//        return new RestTemplate();
+//    }
+//
+//    @Bean
+//    @Qualifier("restTemplateSinRedirect")
+//    RestTemplate restTemplateSinRedirect() {
+//        CloseableHttpClient httpClient = HttpClients.custom()
+//                .disableRedirectHandling()
+//                .build();
+//
+//        HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory(httpClient);
+//        return new RestTemplate(factory);
+//    }
+//
+//    @Bean
+//    WebMvcConfigurer corsConfigurer() {
+//        return new WebMvcConfigurer() {
+//            @Override
+//            public void addCorsMappings(CorsRegistry registry) {
+//                registry.addMapping("/**")
+//                        .allowedOrigins("*")
+//                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+//                        .allowedHeaders("*");
+//            }
+//        };
+//    }
+//
+//    @Value("${app.go.publicadoInv.tab}")
+//    private String publicadoInvTab;
+//    @Value("${app.go.obtenerVehicleStockId.tab}")
+//    private String obtenerVehicleIdTab;
+//    @Value("${app.g.obtenerResponsableReserva.tab}")
+//    private String obtenerResponsableReservaTab;
+//    @Value("${app.go.user}")
+//    private String user;
+//    @Value("${app.go.password}")
+//    private String password;
+//    @Value("${app.url.token}")
+//    private String urlToken;
+//}
