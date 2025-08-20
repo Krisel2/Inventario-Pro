@@ -12,7 +12,7 @@ import lombok.*;
 @NoArgsConstructor
 @Setter
 @Getter
-@Table(name = "v_stock")
+@Table(name = "v_stock_2")
 public class VStockEntity {
     @Id
     @Column(name = "ficha_id")
@@ -27,10 +27,10 @@ public class VStockEntity {
     @Column(name = "codigo_jato_inv")
     private String codigoJato;
 
-    @Column(name = "modelo_inv")
+    @Column(name = "modelo")
     private String modelo;
 
-    @Column(name = "marca_inv")
+    @Column(name = "marca")
     private String marca;
 
     @Column(name = "version_inv")
@@ -60,7 +60,7 @@ public class VStockEntity {
     @Column(name = "fecha_publicado_inv")
     private String fechaPublicado;
 
-    @Column(name = "grossvalue")
+    @Column(name = "pvp")
     private String pvp;
 
     @Column(name = "precio_base_api")
