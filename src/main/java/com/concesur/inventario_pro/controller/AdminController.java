@@ -39,7 +39,7 @@ public class AdminController {
         log.info("Ruta del properties externo: " + externalPropertiesPath);
     }
 
-    // Obtener todas las propiedades actuales para local
+
     @GetMapping("/properties")
     public Map<String, String> getProperties() {
         Map<String, String> propertiesMap = new HashMap<>();
@@ -56,7 +56,6 @@ public class AdminController {
     @PostMapping("/updateProperty")
     public String updateProperty(@RequestParam String key, @RequestParam String value) {
         try {
-            // Leer las líneas del archivo externo
             List<String> lines = Files.readAllLines(Paths.get(externalPropertiesPath), StandardCharsets.ISO_8859_1);
             List<String> updatedLines = new ArrayList<>();
             boolean updated = false;
@@ -75,7 +74,7 @@ public class AdminController {
             if (!updated) {
                 updatedLines.add(key + "=" + value);
             }
-            // Sobrescribir el archivo externo
+
             Files.write(Paths.get(externalPropertiesPath), updatedLines, StandardCharsets.UTF_8);
             vStockService.recargarVariables();
             return "Propiedad actualizada correctamente: " + key + " = " + value;
